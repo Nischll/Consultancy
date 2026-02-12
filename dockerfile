@@ -29,8 +29,6 @@ WORKDIR /var/www
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
-
-# Run migrations automatically on deploy
 RUN php artisan migrate --force
 
 RUN php artisan config:clear
@@ -39,4 +37,4 @@ RUN php artisan view:clear
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=10000
+CMD sh -c "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=10000"
