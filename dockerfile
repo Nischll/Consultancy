@@ -30,6 +30,9 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
+# Run migrations automatically on deploy
+RUN php artisan migrate --force
+
 RUN php artisan config:clear
 RUN php artisan route:clear
 RUN php artisan view:clear
