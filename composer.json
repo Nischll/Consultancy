@@ -1,8 +1,12 @@
 {
-    "name": "consultancy-management",
+    "name": "nischal/consultancy-management",
     "type": "project",
     "description": "Consultancy Management System",
-    "keywords": ["consultancy", "management", "laravel"],
+    "keywords": [
+        "consultancy",
+        "management",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
